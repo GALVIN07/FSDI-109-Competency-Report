@@ -1,0 +1,7 @@
+.quantity-picker .lblQuantity{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.quantity-picker{
+    justify-content: space-evenly;
+}

@@ -1,0 +1,49 @@
+.item{
+    border: 1px solid black;
+    width: 250px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: -1px 1px 3px 0 lightgray;
+}
+
+.item:hover {
+    border: 1px solid rgb(238, 81, 107);
+    box-shadow: -1px 1px 3px 0 pink
+}
+.item img{
+    margin: 0;
+    width: 230px;
+    height: 230px;
+}
+.item h5{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+.item .controls > * {
+    display: inline-block;
+    justify-content: space-around;
+}
+.item .controls .btn-add {
+    margin-left: 20px;
+}
+
+.item .category {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 13px;
+    color: grey;
+}
+.itme .controls {
+    display: flex;
+    justify-content: space;
+}
+.item .quantity-picker{
+    display: 1;
+
+}
+.item .controls .btn{
+    display: 1;
+
+}
