@@ -1,21 +1,27 @@
+import "./cartItem.css"
 
+const CartItem = (props) => {
 
-const CartItem = () => {
+    const getTotal = () => {
+        let total = props.info.price * props.info.quantity;
+        return total.toFixed(2);
+    };
+    return (
     <div className="cart-item">
-        <img src="https://picsum.photos/150/150" alt=""></img>
+        <img className="image" src={"/images/" + props.info.image} alt="product"></img>
+        <div className="info">
+            <h4 className="title">{props.info.title}</h4>
+            <label className="category">{props.info.category}</label>
+        </div>
+        <label className="price">Price: ${props.info.price.toFixed(2)}</label>
 
-        <h4>Titel</h4>
+        <label className="quantity">Quantity: #{props.info.quantity}</label>
 
-        <label>Category</label>
-
-        <label>Price</label>
-
-        <label>Quantity</label>
-
-        <label>Total: $</label>
+        <label className="total">Total: ${getTotal()}</label>
 
 
-    </div>;
+    </div>
+    );
 };
 
 export default CartItem;

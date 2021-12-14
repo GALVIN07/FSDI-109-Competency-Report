@@ -22,6 +22,7 @@ function App() {
       <GlobalState>
         <BrowserRouter>
           <NavBar></NavBar>
+          <div className="page-content">
 
           <Routes>
             <Route path="/home" exact element={<Home/>}></Route>
@@ -30,7 +31,7 @@ function App() {
             <Route path="/about" exact element={<About/>}></Route>
             <Route path="/cart" exact element={<Cart/>}></Route>
           </Routes>
-
+          </div>
           <Footer></Footer>
         </BrowserRouter>
       </GlobalState>

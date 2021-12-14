@@ -8,10 +8,6 @@ const Item = (props) => {
 
     const [quantity, setQuantity] = useState(1);
     const addProductToCart = useContext(storeContext).addProductToCart;
-    const handleAdd = () => {
-        
-        addProductToCart(props.data);
-    };
 
     const quantityChange = (val) => {
         console.log("Quantity has Changed", val);
@@ -22,7 +18,17 @@ const Item = (props) => {
     const getTotal = () => {
         let total =  quantity * props.data.price;
         return total.toFixed(2);
-    }
+    };
+
+    const handleAdd = () => {
+        let prodForCart = { 
+            ...props.data, 
+            quantity: quantity,
+        };
+        addProductToCart(prodForCart);
+        console.log(prodForCart);
+
+    };
 
     return (
         <div className="item">

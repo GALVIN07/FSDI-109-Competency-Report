@@ -1,6 +1,5 @@
 
 import React, { useContext } from "react";
-import reactDom from "react-dom";
 import storeContext from "../context/storeContext";
 import "./navBar.css";
 import { Link } from "react-router-dom";
@@ -53,7 +52,9 @@ function NavBar() {
               
             </ul>
             <form className="d-flex">
-              <span className="badge bg-primary">{cart.length}</span>
+              <Link className="nav-link" to="/cart">
+              <span className="badge bg-primary">{cart.length} View Cart</span>
+              </Link>
             </form>
           </div>
         </div>
