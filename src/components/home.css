@@ -1,0 +1,24 @@
+.home-page{
+    position: relative;
+}
+.home-page .image{
+    width: 70%;
+    height: 600px;
+}
+
+.home-page .text-over-img{
+    position: absolute;
+    width: 100%;
+    top:400px;
+    left: 75%;
+}
+.home-page .text-over-img h3{
+    width: 100px;
+}
+.home-page .catalog-link .btn{
+    margin-top: 20px;
+}
+.home-page .catalog-link .btn:hover {
+    background-color: blue;
+    color: rgb(245, 245, 252);
+}
