@@ -10,7 +10,7 @@ function NavBar() {
   const cart = useContext(storeContext).cart;
   
   return (
-    <div classNameName="mynav">
+    <div className="mynav">
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/#">

@@ -8,24 +8,26 @@ const Catalog = () => {
     const [categories, setCategories] = useState([]);
     const [itemsToDisplay, setItemsToDisplay] = useState([]);
 
-    const loadCatalog = ( ) => {
+    const loadCatalog = async ( ) => {
         // create an instance of the service
         // call the method
         let service = new DataService();
-        let catalog = service.getCatalog();
+        let catalog = await service.getCatalog();
         setItemList(catalog);
         setItemsToDisplay(catalog);
 
-        let cats = [];
+        /*let cats = [];
         for(let i = 0; i < catalog.length; i++){
             let prod = catalog[i];
             
             if(!cats.includes(prod.category)){
                 cats.push(prod.category);
             }
-        }
+        }*/
+
+        let categories = await service.getCategories();
         
-        setCategories(cats);
+        setCategories(categories);
         
     };
     const handleFilter= (cat) => {

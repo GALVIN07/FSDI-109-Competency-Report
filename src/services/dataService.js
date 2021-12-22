@@ -1,4 +1,4 @@
-
+import axios from "axios";
 
 
 const Catalog= [ 
@@ -77,13 +77,25 @@ const Catalog= [
 
 class DataService {
 
-    getCatalog() {
+    async getCatalog() {
+        let resp = await axios.get("http://127.0.0.1:5000/api/catalog");
+        console.log(resp)
 
-        return Catalog;
-        // TODO: call the server
+        return resp.data;
 
-        // work with mock data (temporal)
+        // return Catalog;
     }
+    async getCategories() {
+        let resp = await axios.get("http://127.0.0.1:5000/api/products/categories");
+        return resp.data;
+    }
+
+    async submitOrder(order) {
+        let response = await axios.post("http://127.0.0.1:5000/api/order", order);
+        return response.data;
+
+    }
+
 
     saveItem() {
 

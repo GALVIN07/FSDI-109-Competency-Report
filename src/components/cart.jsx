@@ -2,6 +2,7 @@ import "./cart.css";
 import storeContext from "../context/storeContext";
 import React, {useContext} from "react";
 import CartItem from "./cartItem";
+import DataService from "../services/dataService";
 
 
 
@@ -20,6 +21,16 @@ const Cart = () => {
         }
 
         return total.toFixed(2);
+    };
+
+    const submitOrder = () => {
+        let order = {
+            user: 1231232,
+            products: cart
+        };
+
+        let service = new DataService();
+        service.submitOrder(order);
     };
 
     return (
@@ -46,7 +57,7 @@ const Cart = () => {
 
                         <hr />
 
-                        <button className="btn btn-dark">Proceed to Payment</button>
+                        <button onClick={submitOrder} className="btn btn-dark">Proceed to Payment</button>
                     </div>
                 </section>
             </div>
